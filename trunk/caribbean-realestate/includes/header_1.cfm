@@ -138,7 +138,7 @@
             <tr>
               <td><input name="location" type="text" class="w100px inp" /></td>
               <td><cfset qry = createObject("component", "#application.commonCFC#").ListCategories()/>
-                <select name="propertyType" class="required" style="width:120px;">
+                <select name="propertyType" class="w100px inp" style="width:120px;">
                   <option value="">Select</option>
                   <cfloop query="qry">
                     <option value="#id#">#name#</option>
