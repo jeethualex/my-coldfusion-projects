@@ -5,7 +5,7 @@
     <tr>
       <cfset myQuery2 = obj.ListFCategories()/>
         <cfloop query="myQuery2">
-          <td width="100" <cfif currentrow gt 1>class="dottedLineLt"<cfelse><cfset FirstCategoryId = category_id></cfif> align="center"><a href="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=#category_id#&items=3');">#obj.GetCategory(category_id).name#</a></td>
+          <td width="100" <cfif currentrow gt 1>class="dottedLineLt"<cfelse><cfset FirstCategoryId = category_id></cfif> align="center"><a href="##" onclick="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=#category_id#&items=3');">#obj.GetCategory(category_id).name#</a></td>
         </cfloop>
 	 
 	 <!--- <td width="100" align="center"><a href="##">Category 1</a></td>
