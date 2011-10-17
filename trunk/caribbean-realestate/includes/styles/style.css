@@ -1,0 +1,44 @@
+/* CSS Document */
+
+body { 
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+color: #000000;
+margin:15px;
+padding:0px;
+}
+
+input, select {
+font-size:11px;
+}
+
+h1 { font-size:16px; }
+h2 { font-size:14px; }
+h3 { font-size:13px; }
+h3 { font-size:12px; }
+
+table tr th,table tr td, table {
+border:solid 1px #333333;
+border-collapse:collapse;
+padding:5px;
+margin:0;
+text-transform:lowercase;
+} 
+
+
+table th {
+background: #CCC;
+text-transform:capitalize;
+}
+
+table.noborder, table.noborder tr td {
+border:none;
+} 
+
+p.menu{
+font-weight:bold;
+text-transform:capitalize;
+}
+
+.hide { display:none;}
+
