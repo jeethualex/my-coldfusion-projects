@@ -1,10 +1,11 @@
 <cfoutput>
   <div class="content tabcontent checkerLightBG">
+  <a name="featured_properties"></a>
     <table border="0" cellpadding="2" cellspacing="0" class="categories">
       <tr>
         <cfset myQuery2 = obj.ListFCategories()/>
         <cfloop query="myQuery2">
-          <td width="100" <cfif currentrow gt 1>class="dottedLineLt"<cfelse><cfset FirstCategoryId = category_id></cfif> align="center"><a href="##" onclick="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=#category_id#');">#obj.GetCategory(category_id).name#</a></td>
+          <td width="100" <cfif currentrow gt 1>class="dottedLineLt"<cfelse><cfset FirstCategoryId = category_id></cfif> align="center"><a href="##featured_properties" onclick="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=#category_id#');">#obj.GetCategory(category_id).name#</a></td>
         </cfloop>
         <!---  <td width="100" align="center"><a href="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=1');">Category 1</a></td>
         <td width="100" class="dottedLineLt" align="center"><a href="javascript:$('.loadArea').load('#application.incPath#ajax_featured_category.cfm?catid=2');">Category 2</a></td>
