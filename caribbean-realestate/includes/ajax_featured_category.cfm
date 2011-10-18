@@ -1,4 +1,4 @@
-<cfparam name="items" default="6">
+<cfparam name="items" default="3">
 
 <cfoutput>
   <cfset obj = createObject("component", "#application.commonCFC#")>
