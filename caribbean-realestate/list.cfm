@@ -254,6 +254,69 @@ $(".at#qry11.currentrow#").qtip({
   </cfoutput> </div>
 <!---LOOP--->
 <!---LOOP1--->
+
+
+<div id="simpleview" class="hide"> 
+ <div class="contentHolder" align="center">
+ 
+ <table width="100%" cellpadding="5" cellspacing="0" border="0" class="list_table">
+ <tr>
+ <th>title</th>
+ <th>location</th>
+ <th>bedrooms</th>
+ <th>bathrooms</th>
+ <th>size</th>
+ <th>price</th>
+ </tr>
+ 
+ <cfoutput query="qry11" startrow="#pagination.getStartRow()#" maxrows="#pagination.getMaxRows()#">
+  <cfset loc=ListToArray(qry11.location)>
+  <tr>
+ <td><a href="#application.basePath#detail.cfm?#qryStr#">#qry11.title#</a></td>
+ <td><cfif loc[1] neq 0>
+        <cfset qry1 = obj.GetLocation(loc[1])/> #qry1.name#, 
+      </cfif>
+      <cfif loc[2] neq 0>
+        <cfset qry2 = obj.GetLocation(loc[2])/> #qry2.name#, 
+      </cfif>
+      <cfif loc[3] neq 0>
+        <cfset qry3 = obj.GetLocation(loc[3])/> #qry3.name#, 
+      </cfif>
+	   <cfif loc[4] neq 0>
+                #loc[4]#
+              </cfif>
+	  
+		  </td>
+ <td>#qry11.bedrooms#</td>
+ <td>#qry11.bathrooms#</td>
+ <td>#qry11.size# sq.ft.</td>
+ <td>$#qry11.price#</td>
+ </tr>
+ </cfoutput>
+ </table>
+ 
+ 
+ 
+ </div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="simpleview" class="hide"> <cfoutput query="qry11" startrow="#pagination.getStartRow()#" maxrows="#pagination.getMaxRows()#">
     <div class="cboth">
       <div class="contentHolder" align="center">

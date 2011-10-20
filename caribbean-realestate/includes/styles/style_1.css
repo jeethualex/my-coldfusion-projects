@@ -563,3 +563,6 @@ color:#000000;
 }
 
 .hide { display:none;}
+
+table.list_table tr th{ text-align:left;
+}
