@@ -177,6 +177,10 @@ a:hover {
     width: 120px;
 }
 
+.w195px {
+    width: 195px;
+}
+
 .w130px {
 	width: 195px;
 }
@@ -484,9 +488,9 @@ table.categories tr td a {
 .outer .secondcontent .contentHolder .intrested {
     border: 1px solid #CCCCCC;
     border-radius: 5px 5px 5px 5px;
-    margin: 20px;
+    /*margin: 20px;
     padding: 10px;
-    width: 500px;
+    width: 500px;*/
 }
 
 .outer .secondcontent .contentHolder .intrested table tr td p{
@@ -566,3 +570,13 @@ color:#000000;
 
 table.list_table tr th{ text-align:left;
 }
+/*rounded tabs*/
+
+.tab_content {
+border-radius: 5px 5px 5px 5px;
+}
+
+#container_tabs ul.menu_tabs li {
+border-radius: 5px 5px 0px 0px;
+}
+/*rounded tabs*/
