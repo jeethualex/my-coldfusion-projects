@@ -7,7 +7,7 @@
   <cfset photos=ListToArray(qry.photos)>
   <cfset photoindex=ArrayLen(photos)>
 </cfif>
-<cfinclude template="gallery.cfm">
+
 <cfoutput>
   <div class="content secondcontent">
     <div class="breadcrumb"><a href="##">Home</a> > <a href="##">Details</a></div>
@@ -199,6 +199,84 @@
             </ul>
             <span class="clear"></span>
             <div class="tab_content news">
+              <!---GALLERY--->
+              <cfoutput>
+                <link rel="stylesheet" type="text/css" href="#application.jsPath#gallery/jquery.ad-gallery.css">
+                <script type="text/javascript" src="#application.jsPath#gallery/jquery.ad-gallery.js"></script>
+                <script type="text/javascript">
+$(document).ready(function(){
+
+
+$(function() {
+	$('img.image1').data('ad-desc', 'Whoa! This description is set through elm.data("ad-desc") instead of using the longdesc attribute.<br>And it contains <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>eet <strong>L</strong>adies... <em>What?</em> That aint what HTML stands for? Man...');
+	$('img.image1').data('ad-title', 'Title through $.data');
+	$('img.image4').data('ad-desc', 'This image is wider than the wrapper, so it has been scaled down');
+	$('img.image5').data('ad-desc', 'This image is higher than the wrapper, so it has been scaled down');
+	var galleries = $('.ad-gallery').adGallery();
+	$('##switch-effect').change(function() {
+		galleries[0].settings.effect = $(this).val();
+		return false;
+	});
+	$('##toggle-slideshow').click(function() {
+		galleries[0].slideshow.toggle();
+		return false;
+	});
+	$('##toggle-description').click(function() {
+		if(!galleries[0].settings.description_wrapper) {
+		galleries[0].settings.description_wrapper = true;/*$('##descriptions');*/
+		} else {
+		galleries[0].settings.description_wrapper = false;
+		}
+		return false;
+	});
+});
+
+
+});
+</script>
+                <style type="text/css">   
+##gallery, ##gallery1 {
+margin-left: auto;
+margin-right: auto;
+padding: 30px;
+}	 
+
+##descriptions {
+position: relative;
+height: 50px;
+background: ##EEE;
+margin-top: 10px;
+width: 640px;
+padding: 10px;
+overflow: hidden;
+}
+##descriptions .ad-image-description {
+position: absolute;
+}
+##descriptions .ad-image-description .ad-description-title {
+display: block;
+}
+
+##container_tabs {
+margin: 0;
+}
+
+</style>
+                <style type="text/css">   
+/*new style*/
+.gallery1 {
+border: 1px solid ##D0CCC9;
+border-radius: 5px 5px 5px 5px;
+width:300px;
+}
+
+.gallery1 .ad-image-wrapper {
+height: 300px;
+}
+/*new style*/
+</style>
+              </cfoutput>
+              <!---GALLERY--->
               <!---NEW GALLERY--->
               <table class="noborder" cellpadding="5">
                 <tr>
