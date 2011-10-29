@@ -1,3 +1,12 @@
+
+<cfset IsSecurePage = ListFindNoCase("detail.cfm",listlast(cgi.script_name,"/\") , ",") neq 0>
+<cfset IsLoginPrivilege = IsDefined("session.privilege")>
+<cfif IsSecurePage>
+  <cfif not IsLoginPrivilege>
+    <cflocation url="#application.incPath#logout1.cfm?err=1" addtoken="no">
+  </cfif>
+</cfif>
+
 <cfset obj = createObject("component", "#application.commonCFC#")>
 <cfoutput>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,7 +23,14 @@
   <div class="wrap">
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td><p><span class="heading">CARIBBEANREALESTATE.com</span> <a href="##" class="glue">Sign up</a> <a href="##">Login</a> <a href="##">News</a>
+        <td><p><a href="#application.basePath#index.cfm" class="heading">CARIBBEANREALESTATE.com</a> <a href="##" class="glue">Sign up</a> 
+		<cfif not IsLoginPrivilege>
+		
+		<a href="##" class="blueColor" onclick="Show_Popup();">Login</a> 
+		<cfelse>
+		<a href="#application.incPath#logout1.cfm" class="blueColor">Logout</a> 
+		</cfif>
+		<a href="##">News</a>
             <!--<a href="##">Browse</a> <a href="##">Music</a> <a href="##">Topics</a> <a href="##">Video Games</a>-->
           </p></td>
         <td align="right" width="300"><table border="0" cellpadding="0" cellspacing="0">

@@ -14,11 +14,13 @@
 
  <cfoutput query="myQuery"  maxrows="#items#">
   <cfset i = i+1>
+  <cfset qryStr = "id=#id#">
   <div class="w33p floatL">
     <div class="contentHolder"> <img src="#application.uploadPath##ListFirst(photos)#" class="tbnl" align="left" />
-      <h1><a href="##">#title#</a></h1>
+      <h1>
+	  <a href="#application.basePath#detail.cfm?#qryStr#">#title#</a></h1>
       <p>#description#</p>
-      <p> <a href="##">&raquo; See Details</a></p>
+      <p> <a href="#application.basePath#detail.cfm?#qryStr#">&raquo; See Details</a></p>
     </div>
   </div>
   <cfif not ( i mod 3 neq 0 )>

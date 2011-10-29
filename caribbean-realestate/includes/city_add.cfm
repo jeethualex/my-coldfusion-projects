@@ -1,7 +1,6 @@
 <cfif IsDefined("form.Submit")>
   <cfset success = createObject("component", "#application.commonCFC#").InsertLocation(form)/>
 </cfif>
-<cfset obj = createObject("component", "#application.commonCFC#")>
 <cfinclude template="#application.incPath#header.cfm">
 <cfoutput>
   <!-- VALIDATOR -->
@@ -23,41 +22,47 @@
   <!--onsubmit="javascript:if(!$('##aForm').valid()) return false;"-->
   <form action="" method="post" id="aForm" >
     <table class="noborder">
-      <tr>
+	   <tr>
         <td>country</td>
-        <td><select name="country_id" id="country_id" class="required" onchange="javascript:$(location).attr('href','#application.incPath#city_add.cfm?country_id='+$('##country_id :selected').val());">
-            <option value="0">-- Select --</option>
-            <cfset country_id = 0>
-            <cfif IsDefined("url.country_id")>
-              <cfset country_id = url.country_id>
-            </cfif>
-            <cfset countries = obj.ListCountries()/>
-            <cfloop query="countries">
+        <td>
+		
+		
+		 <select name="country_id" id="country_id" class="required" onchange="javascript:$(location).attr('href','#application.incPath#city_add.cfm?country_id='+$('##country_id :selected').val());">
+			<option value="0">-- Select --</option>
+			<cfset country_id = 0>
+			<cfif IsDefined("url.country_id")>
+				<cfset country_id = url.country_id>
+			</cfif>
+			<cfset countries = createObject("component", "#application.commonCFC#").ListCountries()/>
+			<cfloop query="countries">
               <option value="#id#" <cfif country_id eq id>selected="selected"</cfif>>#name#</option>
             </cfloop>
           </select>
-        </td>
+		</td>
       </tr>
-      <tr>
+	   <tr>
         <td>state</td>
-        <td><select name="parent_id" class="required">
-            <option value="0">-- Select --</option>
-            <cfif country_id neq 0>
-              <cfset states = obj.GetStates(country_id)/>
-              <cfloop query="states">
-                <option value="#id#">#name#</option>
-              </cfloop>
-            </cfif>
+        <td>
+		
+		 <select name="parent_id" class="required">
+			<option value="0">-- Select --</option>
+			<cfif country_id neq 0>
+				<cfset states = createObject("component", "#application.commonCFC#").GetStates(country_id)/>
+				<cfloop query="states">
+				  <option value="#id#">#name#</option>
+				</cfloop>
+			</cfif>
           </select>
-        </td>
+		</td>
       </tr>
-      <tr>
+	  <tr>
         <td>City</td>
         <td><input name="name" type="text" maxlength="50" class="required"/></td>
       </tr>
       <tr>
-        <td colspan="2"><input name="type" type="hidden" value="2" />
-          <input name="Submit" type="submit" value="Submit" />
+        <td colspan="2">
+		<input name="type" type="hidden" value="2" />
+		<input name="Submit" type="submit" value="Submit" />
           <input name="cancel" type="button" value="Cancel" onclick="javascript:$(location).attr('href','#application.incPath#city_list.cfm');" /></td>
       </tr>
     </table>
