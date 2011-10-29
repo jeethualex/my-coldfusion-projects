@@ -2,6 +2,7 @@
 <cfset IsLoginPrivilege = IsDefined("session.privilege")>
 <cfif IsSecurePage>
   <cfif not IsLoginPrivilege>
+  <cfset session.urlpath="#cgi.SCRIPT_NAME#">
     <cflocation url="#application.incPath#logout1.cfm?err=1" addtoken="no">
   </cfif>
 </cfif>
