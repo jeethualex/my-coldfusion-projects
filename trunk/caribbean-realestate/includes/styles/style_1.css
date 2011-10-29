@@ -37,7 +37,7 @@ a:hover {
 	color: #FFFFFF;
 }
 
-.header p span.heading {
+.header p a.heading {
     font-size: 24px;
     font-weight: bold;
 }

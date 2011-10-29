@@ -7,10 +7,10 @@
   <cfset photos=ListToArray(qry.photos)>
   <cfset photoindex=ArrayLen(photos)>
 </cfif>
-
+ <cfset qryStr1 = "id=#propertyid#">
 <cfoutput>
   <div class="content secondcontent">
-    <div class="breadcrumb"><a href="##">Home</a> > <a href="##">Details</a></div>
+    <div class="breadcrumb"><a href="#application.basePath#">Home</a> > <a href="#application.basePath#detail.cfm?#qryStr1#">Details</a></div>
     <div class="w25p floatL">
       <!--- SEARCH PANEL--->
       <cfif IsDefined("form")>
@@ -20,6 +20,7 @@
       <div class="sidePanelSearch gradient">
         <h1>Search Properties</h1>
         <div class="cboth dottedLineTop h10px"></div>
+		<form name="f1" action="list.cfm" method="post">
         <table border="0" cellpadding="3" cellspacing="0" width="100%">
           <tr>
             <td width="55"><strong>Location</strong></td>
@@ -49,6 +50,7 @@
                 <cfset bed=0>
               </cfif>
               <select name="bed" class="w120px inp">
+			   <option value=""></option>
                 <option value="1" <cfif bed eq 1>selected="selected" </cfif>>1</option>
                 <option value="2" <cfif bed eq 2>selected="selected" </cfif>>2</option>
                 <option value="3" <cfif bed eq 3>selected="selected" </cfif>>3</option>
@@ -62,6 +64,7 @@
                 <cfset bath=0>
               </cfif>
               <select name="bath" class="w120px inp">
+			   <option value=""></option>
                 <option value="1" <cfif bath eq 1>selected="selected" </cfif> >1</option>
                 <option value="2" <cfif bath eq 2>selected="selected" </cfif>>2</option>
                 <option value="3" <cfif bath eq 3>selected="selected" </cfif>>3</option>
@@ -108,9 +111,10 @@
           </tr>
           <tr>
             <td></td>
-            <td><input name="submit" type="button" value="Search" class="glue secondary" /></td>
+            <td><input name="submit" type="submit" value="Search" class="glue secondary" /></td>
           </tr>
         </table>
+		</form>
       </div>
       <!--- SEARCH PANEL--->
       <cfif loc[1] neq 0>
@@ -159,27 +163,29 @@
             <td>$#qry.price#</td>
           </tr>
         </table>--->
+		<form name="f2" action="#application.incPath#email.cfm" method="post">
         <table border="0" cellpadding="1" cellspacing="0" width="100%">
           <tr>
             <td><strong>Name</strong><br />
-              <input name="location" type="text" class="w195px inp" /></td>
+              <input name="name" type="text" class="w195px inp" /></td>
           </tr>
           <tr>
             <td><strong>Email</strong><br />
-              <input name="location" type="text" class="w195px inp" /></td>
+              <input name="email" type="text" class="w195px inp" /></td>
           </tr>
           <tr>
             <td><strong>Telephone</strong><br />
-              <input name="location" type="text" class="w195px inp" /></td>
+              <input name="phone" type="text" class="w195px inp" /></td>
           </tr>
           <tr>
             <td><strong>Message</strong><br />
               <textarea name="msg" cols="50" rows="6"  class="w195px inp"></textarea></td>
           </tr>
           <tr>
-            <td align="right"><input name="" type="button" value="Send" class="glue secondary" /></td>
+            <td align="right"><input name="submitmsg" type="submit" value="Send" class="glue secondary" /><input name="propertyid" type="hidden" value="#propertyid#" /></td>
           </tr>
         </table>
+		</form>
       </div>
       <div class="h5px"></div>
     </div>
