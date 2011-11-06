@@ -8,7 +8,5 @@
 	 <a href="#application.incPath#popular_locations_list.cfm">Popular Locations</a> |
 	<a href="#application.incPath#property_list.cfm">Properties</a> | 
 	<a href="#application.incPath#news_list.cfm">News</a> |
-	<a href="#application.incPath#logout.cfm">Logout</a> | 
-	<a href="#application.basePath#index.cfm" target="_blank">Site Home</a></p>
-  <hr/>
+	<a href="#application.incPath#logout.cfm">Logout</a> </p>
 </cfoutput>

@@ -25,7 +25,7 @@
   </table>
 </cfoutput>
 <cfif myQuery.recordCount>
-  <table>
+  <table class="gridd">
     <tr>
       <th>Featured Category Name</th>
 	  <th>Order</th>

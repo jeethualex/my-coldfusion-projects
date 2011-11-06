@@ -3,8 +3,8 @@
 <cfset IsLoginPrivilege = IsDefined("session.privilege")>
 <cfif IsSecurePage>
   <cfif not IsLoginPrivilege>
-  <cfset session.urlpath="#cgi.SCRIPT_NAME#">
-    <cflocation url="#application.incPath#logout1.cfm?err=1" addtoken="no">
+  <cfset session.urlpath="#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#">
+    <cflocation url="#application.basePath#index.cfm?err=2" addtoken="no">
   </cfif>
 </cfif>
 
@@ -14,7 +14,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Real Estate Project</title>
+<title>CARIBBEANREALESTATE.com</title>
 <link href="#application.cssPath#style_1.css" rel="stylesheet" type="text/css" />
 <script src="http://craigsworks.com/projects/qtip/packages/jquery-1.3.2.js"></script>
 <script type="text/javascript" src="http://craigsworks.com/projects/qtip/packages/1.0.0-rc3/jquery.qtip-1.0.0-rc3.js"></script>
@@ -24,7 +24,7 @@
   <div class="wrap">
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       <tr>
-        <td><p><a href="#application.basePath#index.cfm" class="heading">CARIBBEANREALESTATE.com</a> <a href="##" class="glue">Sign up</a> 
+        <td><p><a href="#application.basePath#index.cfm" class="heading" style="margin-left:0;">CARIBBEANREALESTATE.com</a> <a href="##" class="glue">Sign up</a> 
 		<cfif not IsLoginPrivilege>
 		
 		<a href="##" class="blueColor" onclick="Show_Popup();">Login</a> 

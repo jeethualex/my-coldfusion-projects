@@ -58,7 +58,7 @@
   </table>
 </cfoutput>
 <cfif myQuery.recordCount>
-  <table>
+  <table class="gridd">
     <tr>
       <th>username</th>
       <th>password</th>
