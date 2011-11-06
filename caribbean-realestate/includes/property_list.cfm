@@ -54,7 +54,7 @@
   </table>
 </cfoutput>
 <cfif myQuery.recordCount>
-  <table>
+  <table class="gridd">
     <tr>
       <th>title</th>
       <th>description</th>

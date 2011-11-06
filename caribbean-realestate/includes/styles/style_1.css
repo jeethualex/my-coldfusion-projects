@@ -580,3 +580,26 @@ border-radius: 5px 5px 5px 5px;
 border-radius: 5px 5px 0px 0px;
 }
 /*rounded tabs*/
+
+table.gridd tr th,table.gridd tr td, table.gridd {
+border:solid 1px #333333;
+border-collapse:collapse;
+padding:5px;
+margin:0;
+text-transform:lowercase;
+} 
+
+
+table.gridd th {
+background: #CCC;
+text-transform:capitalize;
+}
+
+table.noborder, table.noborder tr td {
+border:none;
+} 
+
+p.menu{
+font-weight:bold;
+text-transform:capitalize;
+}

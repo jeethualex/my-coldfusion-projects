@@ -22,7 +22,7 @@
   </table>
 </cfoutput>
 <cfif myQuery.recordCount>
-  <table>
+  <table class="gridd">
     <tr>
       <th>Popular Location Name</th>
       <th>Order</th>

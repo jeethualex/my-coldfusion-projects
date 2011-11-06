@@ -3,7 +3,7 @@
 <cfif IsSecurePage>
   <cfif not IsLoginPrivilege>
   <cfset session.urlpath="#cgi.SCRIPT_NAME#">
-    <cflocation url="#application.incPath#logout1.cfm?err=1" addtoken="no">
+    <cflocation url="#application.basePath#index.cfm?err=1" addtoken="no">
   </cfif>
 </cfif>
 
@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Real Estate Project</title>
+<title>CARIBBEANREALESTATE.com</title>
 <link href="#application.cssPath#style_1.css" rel="stylesheet" type="text/css" />
 <script src="#application.jsPath#jquery.min.js"></script>
 <script src="#application.jsPath#jquery.cross-slide.js"></script>
@@ -25,7 +25,7 @@
       <tr>
         <td><p>
 		
-		<a href="#application.basePath#index.cfm" class="heading">CARIBBEANREALESTATE.com</a>
+		<a href="#application.basePath#index.cfm" class="heading" style="margin-left:0;">CARIBBEANREALESTATE.com</a>
 		
 		 <a href="##" class="glue">Sign up</a> 
 		
