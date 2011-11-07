@@ -56,12 +56,12 @@
 
 
 <div class="outer">
-<div class="banner">
+<!---<div class="banner">
 <!--Second Page-->
 <div class="Banner5"></div>
-</div>
+</div>--->
 
-
+<div class="h5px"></div>
 
 <div class="content tabcontent checkerLightBG">
   <a name="featured_properties"></a>
@@ -69,6 +69,8 @@
       <tr><td align="center">
 	  <cfif not IsLoginPage>
   <cfinclude template="#application.incPath#menu.cfm">
+  <cfelse>
+  <h3>Please login using your admin credentials</h3>
 </cfif></td>
 	   </tr>
     </table>
